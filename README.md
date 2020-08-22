@@ -1,3 +1,3 @@
 # SentimentAnalyzer
-Created by Anna Yang, Jenny Yang, and Raj Ayush for Ignition Hacks 2020
+Created by Anna Yang, Jenny Yang, and Ayush Raj for Ignition Hacks 2020
 
