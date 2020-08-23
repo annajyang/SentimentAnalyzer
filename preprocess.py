@@ -11,6 +11,9 @@ from nltk.stem.wordnet import WordNetLemmatizer
 nltk.download('wordnet')
 from sklearn.feature_extraction.text import CountVectorizer
 
+singlewordfeatures=1000
+phrasefeatures=1000
+
 train = pd.read_csv('training_data.csv')
 judging = pd.read_csv('contestant_judgment.csv')
 
@@ -59,8 +62,8 @@ train = train.merge(new_column, right_index = True, left_index=True)
 bagofwords = train.BagofWords.tolist()
 sentiment = train.Sentiment.tolist()
 
-cv = CountVectorizer(max_features=1000)
-cv2 = CountVectorizer(max_features=1000, ngram_range=(2, 3))
+cv = CountVectorizer(max_features=singlewordfeatures)
+cv2 = CountVectorizer(max_features=phrasefeatures, ngram_range=(2, 3))
 
 x_1 = cv.fit_transform(train['BagofWords']).toarray()
 x_2 = cv2.fit_transform(train['Text']).toarray()
